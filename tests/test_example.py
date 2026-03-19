@@ -9,7 +9,6 @@ from haystack.core.serialization import component_from_dict, component_to_dict
 from haystack_integrations.components.example import ExampleComponent
 
 
-
 class TestExampleComponent:
     def test_init_default(self):
         component = ExampleComponent()
