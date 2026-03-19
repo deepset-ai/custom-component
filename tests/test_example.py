@@ -25,7 +25,7 @@ class TestExampleComponent:
 
     def test_to_dict(self):
         component = ExampleComponent(param="custom")
-        data = component_to_dict(component)
+        data = component_to_dict(component, "ExampleComponent")
         assert data == {
             "type": "haystack_integrations.components.example.example_component.ExampleComponent",
             "init_parameters": {"param": "custom"},
@@ -36,5 +36,5 @@ class TestExampleComponent:
             "type": "haystack_integrations.components.example.example_component.ExampleComponent",
             "init_parameters": {"param": "custom"},
         }
-        deserialized = component_from_dict(data)
+        deserialized = component_from_dict(ExampleComponent, data, "ExampleComponent")
         assert deserialized.param == "custom"
