@@ -4,7 +4,10 @@
 
 # TODO: Replace these example tests with tests for your own component(s).
 
+from haystack.core.serialization import component_from_dict, component_to_dict
+
 from haystack_integrations.components.example import ExampleComponent
+
 
 
 class TestExampleComponent:
@@ -23,14 +26,16 @@ class TestExampleComponent:
 
     def test_to_dict(self):
         component = ExampleComponent(param="custom")
-        data = component.to_dict()
+        data = component_to_dict(component)
         assert data == {
             "type": "haystack_integrations.components.example.example_component.ExampleComponent",
             "init_parameters": {"param": "custom"},
         }
 
     def test_from_dict(self):
-        component = ExampleComponent(param="custom")
-        data = component.to_dict()
-        deserialized = ExampleComponent.from_dict(data)
+        data = {
+            "type": "haystack_integrations.components.example.example_component.ExampleComponent",
+            "init_parameters": {"param": "custom"},
+        }
+        deserialized = component_from_dict(data)
         assert deserialized.param == "custom"
