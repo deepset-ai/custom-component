@@ -8,7 +8,8 @@ from haystack import component
 # TODO: Rename this class and update the output types and run method to match your use case.
 @component
 class ExampleComponent:
-    """A custom Haystack component.
+    """
+    A custom Haystack component.
 
     Usage:
     ```python
