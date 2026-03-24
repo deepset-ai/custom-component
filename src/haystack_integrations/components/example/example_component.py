@@ -40,3 +40,8 @@ class ExampleComponent:
         # TODO: Implement your component logic here.
         result = input_text
         return {"output": result}
+
+    # NOTE: Custom `to_dict` and `from_dict` methods are only needed if the default serialization doesn't work
+    # for your component (e.g. it has non-serializable attributes). For details, see:
+    # https://docs.haystack.deepset.ai/docs/serialization#default-serialization-behavior
+
