@@ -20,7 +20,7 @@ class ExampleComponent:
     ```
     """
 
-    def __init__(self, param: str = "default"):
+    def __init__(self, param: str = "default") -> None:
         """
         Initialize the component.
 
@@ -44,4 +44,3 @@ class ExampleComponent:
     # NOTE: Custom `to_dict` and `from_dict` methods are only needed if the default serialization doesn't work
     # for your component (e.g. it has non-serializable attributes). For details, see:
     # https://docs.haystack.deepset.ai/docs/serialization#default-serialization-behavior
-
